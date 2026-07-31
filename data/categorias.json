@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "nombre": "Computación"
+  },
+  {
+    "id": 2,
+    "nombre": "Periféricos"
+  },
+  {
+    "id": 3,
+    "nombre": "Redes"
+  },
+  {
+    "id": 4,
+    "nombre": "Audio"
+  },
+  {
+    "id": 5,
+    "nombre": "Movilidad"
+  },
+  {
+    "id": 6,
+    "nombre": "Almacenamiento"
+  },
+  {
+    "id": 7,
+    "nombre": "Oficina"
+  },
+  {
+    "id": 8,
+    "nombre": "Seguridad"
+  }
+]

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proyecto A - Sistema de inventario y ventas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark app-navbar sticky-top shadow-sm">
+    <div class="container"><a class="navbar-brand fw-bold" href="#">Proyecto A</a><span class="navbar-text text-white-50 d-none d-md-inline">Evaluación final de JavaScript</span></div>
+  </nav>
+
+  <main class="container py-4 py-lg-5">
+    <section class="hero-panel p-4 p-lg-5 mb-4">
+      <div class="position-relative" style="z-index:1"><span class="badge text-bg-light text-dark mb-3">Frontend entregado por el docente</span><h1 class="display-6 fw-bold mb-3">Sistema de inventario y ventas</h1><p class="lead mb-0 col-lg-8">Administre productos, stock, pedidos y consultas externas desde una sola interfaz.</p></div>
+    </section>
+
+    <section class="row g-3 mb-4"><div class="col-6 col-xl-3"><div class="card stat-card h-100"><div class="card-body"><div class="text-secondary small">Total de productos</div><div class="stat-value" id="stat1">0</div></div></div></div><div class="col-6 col-xl-3"><div class="card stat-card h-100"><div class="card-body"><div class="text-secondary small">Valor del inventario</div><div class="stat-value" id="stat2">0</div></div></div></div><div class="col-6 col-xl-3"><div class="card stat-card h-100"><div class="card-body"><div class="text-secondary small">Precio promedio</div><div class="stat-value" id="stat3">0</div></div></div></div><div class="col-6 col-xl-3"><div class="card stat-card h-100"><div class="card-body"><div class="text-secondary small">Stock bajo</div><div class="stat-value" id="stat4">0</div></div></div></div></section>
+
+    <ul class="nav nav-pills gap-2 mb-3" id="tabsProyecto" role="tablist">
+      <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tabRegistros" type="button">Registros</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#tabFormulario" type="button">Formulario</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#tabApi" type="button">API externa</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#tabEstadisticas" type="button">Estadísticas</button></li>
+    </ul>
+
+    <div class="tab-content">
+      <section id="tabRegistros" class="tab-pane fade show active">
+        <div class="filter-bar p-3 mb-3">
+          <div class="row g-2 align-items-end">
+            <div class="col-lg-4"><label for="inputBusqueda" class="form-label">Búsqueda</label><input id="inputBusqueda" class="form-control" placeholder="Buscar por nombre, código o marca"></div>
+            <div class="col-sm-6 col-lg-2"><label for="filtroPrincipal" class="form-label">Categoría</label><select id="filtroPrincipal" class="form-select"><option value="">Todas</option></select></div>
+            <div class="col-sm-6 col-lg-2"><label for="filtroSecundario" class="form-label">Disponibilidad</label><select id="filtroSecundario" class="form-select"><option value="">Todas</option><option value="activo">Disponible</option><option value="inactivo">No disponible</option><option value="bajo">Stock bajo</option></select></div>
+            <div class="col-sm-7 col-lg-2"><label for="ordenamiento" class="form-label">Ordenar</label><select id="ordenamiento" class="form-select"><option value="">Sin ordenar</option><option value="nombre-asc">Nombre A-Z</option><option value="precio-asc">Precio menor a mayor</option><option value="precio-desc">Precio mayor a menor</option><option value="stock-desc">Mayor stock</option></select></div>
+            <div class="col-sm-5 col-lg-2"><button id="btnLimpiarFiltros" class="btn btn-outline-secondary w-100">Restablecer</button></div>
+          </div>
+        </div>
+
+        <div class="card section-card">
+          <div class="card-header bg-white d-flex flex-wrap gap-2 justify-content-between align-items-center py-3"><div><h2 class="h5 mb-1">Listado dinámico</h2><p class="small text-secondary mb-0">Los elementos deben construirse desde JavaScript.</p></div><button id="btnJsonGeneral" class="btn btn-outline-primary">Ver JSON general</button></div>
+          <div class="card-body">
+            <div id="contenedorRegistros" class="row g-3"></div>
+            <div class="table-responsive d-none"><table class="table align-middle"><thead><tr><th>ID</th><th>Registro</th><th>Relación</th><th>Estado</th><th class="text-end">Acciones</th></tr></thead><tbody id="cuerpoTabla"></tbody></table></div>
+            <div id="estadoVacio" class="empty-state"><h3 class="h5">Pendiente de programación</h3><p class="mb-0">Implemente la carga de datos y el renderizado dinámico en <code>js/app.js</code>.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tabFormulario" class="tab-pane fade">
+        <div class="card section-card"><div class="card-body p-4"><div class="d-flex justify-content-between align-items-start mb-3"><div><h2 id="formularioTitulo" class="h4">Registrar producto</h2><p class="text-secondary">Use el mismo formulario para creación y edición.</p></div><button id="btnRestaurar" class="btn btn-outline-danger btn-sm">Restaurar JSON original</button></div>
+          <form id="formRegistro" class="row g-3" novalidate><div class="col-md-6"><label for="codigo" class="form-label">Código</label><input id="codigo" name="codigo" type="text" class="form-control" placeholder="Ej. TEC-031" required><div class="invalid-feedback">Complete este campo correctamente.</div></div>
+<div class="col-md-6"><label for="nombre" class="form-label">Nombre</label><input id="nombre" name="nombre" type="text" class="form-control" placeholder="Nombre del producto" required><div class="invalid-feedback">Complete este campo correctamente.</div></div>
+<div class="col-md-6"><label for="categoriaId" class="form-label">Categoría</label><select id="categoriaId" name="categoriaId" class="form-select" required><option value="">Seleccione</option></select><div class="invalid-feedback">Seleccione una opción.</div></div>
+<div class="col-md-6"><label for="precio" class="form-label">Precio</label><input id="precio" name="precio" type="number" class="form-control" placeholder="0.00" step="0.01" min="0" required><div class="invalid-feedback">Complete este campo correctamente.</div></div>
+<div class="col-md-6"><label for="stock" class="form-label">Stock</label><input id="stock" name="stock" type="number" class="form-control" placeholder="0" step="0.01" min="0" required><div class="invalid-feedback">Complete este campo correctamente.</div></div>
+<div class="col-md-6"><label for="marca" class="form-label">Marca</label><input id="marca" name="marca" type="text" class="form-control" placeholder="Marca" required><div class="invalid-feedback">Complete este campo correctamente.</div></div>
+<div class="col-md-6"><label for="activo" class="form-label">Estado</label><select id="activo" name="activo" class="form-select" required><option value="true">Activo</option><option value="false">Inactivo</option></select></div><div class="col-12 d-flex gap-2"><button id="btnGuardar" class="btn btn-primary" type="submit">Agregar registro</button><button id="btnCancelarEdicion" class="btn btn-outline-secondary d-none" type="button">Cancelar edición</button></div></form>
+        </div></div>
+      </section>
+
+      <section id="tabApi" class="tab-pane fade">
+        <div class="card section-card"><div class="card-body p-4"><div class="row g-3 align-items-end mb-4"><div class="col-lg-8"><label for="inputApi" class="form-label">Consulta en DummyJSON Products</label><input id="inputApi" class="form-control" placeholder="Ingrese una palabra o seleccione un elemento relacionado"></div><div class="col-lg-4"><button id="btnConsultarApi" class="btn btn-primary w-100">Consultar API externa</button></div></div><div id="resultadosApi" class="row g-3"><div class="empty-state"><h3 class="h5">Sin consulta externa</h3><p class="mb-0">Programe las dos peticiones relacionadas y muestre los resultados aquí.</p></div></div></div></div>
+      </section>
+
+      <section id="tabEstadisticas" class="tab-pane fade">
+        <div class="row g-4"><div class="col-lg-7"><div class="card section-card h-100"><div class="card-body chart-wrap"><h2 class="h5">Productos por categoría</h2><canvas id="graficoResumen"></canvas></div></div></div><div class="col-lg-5"><div class="card section-card h-100"><div class="card-body"><h2 class="h5">Resultados calculados</h2><div id="tablaEstadisticas" class="list-group list-group-flush"><div class="list-group-item text-secondary">Los ocho cálculos deben generarse con métodos de arreglos.</div></div></div></div></div></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="container pb-4"><div class="text-center footer-note">Evaluación final - complete únicamente la lógica de JavaScript y el informe técnico.</div></footer>
+
+  <div id="loader" class="loader-overlay"><div class="text-center text-white"><div class="spinner-border mb-3" role="status"></div><div>Procesando datos...</div></div></div>
+
+  <div class="modal fade" id="modalJson" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h2 class="modal-title fs-5">Datos en formato JSON</h2><button class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div><div class="modal-body"><pre id="salidaJson">[]</pre></div></div></div></div>
+  <div class="modal fade" id="modalApi" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h2 class="modal-title fs-5">Detalle externo</h2><button class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div><div id="contenidoModalApi" class="modal-body"></div></div></div></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

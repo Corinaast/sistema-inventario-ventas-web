@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1001,
+    "productoId": 8,
+    "cantidad": 2,
+    "fecha": "2026-06-03",
+    "estado": "Pendiente"
+  },
+  {
+    "id": 1002,
+    "productoId": 15,
+    "cantidad": 3,
+    "fecha": "2026-06-05",
+    "estado": "Cancelado"
+  },
+  {
+    "id": 1003,
+    "productoId": 22,
+    "cantidad": 4,
+    "fecha": "2026-06-07",
+    "estado": "Completado"
+  },
+  {
+    "id": 1004,
+    "productoId": 29,
+    "cantidad": 5,
+    "fecha": "2026-06-09",
+    "estado": "Pendiente"
+  },
+  {
+    "id": 1005,
+    "productoId": 6,
+    "cantidad": 1,
+    "fecha": "2026-06-11",
+    "estado": "Cancelado"
+  },
+  {
+    "id": 1006,
+    "productoId": 13,
+    "cantidad": 2,
+    "fecha": "2026-06-13",
+    "estado": "Completado"
+  },
+  {
+    "id": 1007,
+    "productoId": 20,
+    "cantidad": 3,
+    "fecha": "2026-06-15",
+    "estado": "Pendiente"
+  },
+  {
+    "id": 1008,
+    "productoId": 27,
+    "cantidad": 4,
+    "fecha": "2026-06-17",
+    "estado": "Cancelado"
+  },
+  {
+    "id": 1009,
+    "productoId": 4,
+    "cantidad": 5,
+    "fecha": "2026-06-19",
+    "estado": "Completado"
+  },
+  {
+    "id": 1010,
+    "productoId": 11,
+    "cantidad": 1,
+    "fecha": "2026-06-21",
+    "estado": "Pendiente"
+  },
+  {
+    "id": 1011,
+    "productoId": 18,
+    "cantidad": 2,
+    "fecha": "2026-06-23",
+    "estado": "Cancelado"
+  },
+  {
+    "id": 1012,
+    "productoId": 25,
+    "cantidad": 3,
+    "fecha": "2026-06-25",
+    "estado": "Completado"
+  },
+  {
+    "id": 1013,
+    "productoId": 2,
+    "cantidad": 4,
+    "fecha": "2026-06-27",
+    "estado": "Pendiente"
+  },
+  {
+    "id": 1014,
+    "productoId": 9,
+    "cantidad": 5,
+    "fecha": "2026-06-29",
+    "estado": "Cancelado"
+  },
+  {
+    "id": 1015,
+    "productoId": 16,
+    "cantidad": 1,
+    "fecha": "2026-07-01",
+    "estado": "Completado"
+  },
+  {
+    "id": 1016,
+    "productoId": 23,
+    "cantidad": 2,
+    "fecha": "2026-07-03",
+    "estado": "Pendiente"
+  },
+  {
+    "id": 1017,
+    "productoId": 30,
+    "cantidad": 3,
+    "fecha": "2026-07-05",
+    "estado": "Cancelado"
+  },
+  {
+    "id": 1018,
+    "productoId": 7,
+    "cantidad": 4,
+    "fecha": "2026-07-07",
+    "estado": "Completado"
+  },
+  {
+    "id": 1019,
+    "productoId": 14,
+    "cantidad": 5,
+    "fecha": "2026-07-09",
+    "estado": "Pendiente"
+  },
+  {
+    "id": 1020,
+    "productoId": 21,
+    "cantidad": 1,
+    "fecha": "2026-07-11",
+    "estado": "Cancelado"
+  },
+  {
+    "id": 1021,
+    "productoId": 28,
+    "cantidad": 2,
+    "fecha": "2026-07-13",
+    "estado": "Completado"
+  },
+  {
+    "id": 1022,
+    "productoId": 5,
+    "cantidad": 3,
+    "fecha": "2026-07-15",
+    "estado": "Pendiente"
+  },
+  {
+    "id": 1023,
+    "productoId": 12,
+    "cantidad": 4,
+    "fecha": "2026-07-17",
+    "estado": "Cancelado"
+  },
+  {
+    "id": 1024,
+    "productoId": 19,
+    "cantidad": 5,
+    "fecha": "2026-07-19",
+    "estado": "Completado"
+  },
+  {
+    "id": 1025,
+    "productoId": 26,
+    "cantidad": 1,
+    "fecha": "2026-07-21",
+    "estado": "Pendiente"
+  },
+  {
+    "id": 1026,
+    "productoId": 3,
+    "cantidad": 2,
+    "fecha": "2026-07-23",
+    "estado": "Cancelado"
+  },
+  {
+    "id": 1027,
+    "productoId": 10,
+    "cantidad": 3,
+    "fecha": "2026-07-25",
+    "estado": "Completado"
+  },
+  {
+    "id": 1028,
+    "productoId": 17,
+    "cantidad": 4,
+    "fecha": "2026-07-27",
+    "estado": "Pendiente"
+  },
+  {
+    "id": 1029,
+    "productoId": 24,
+    "cantidad": 5,
+    "fecha": "2026-07-29",
+    "estado": "Cancelado"
+  },
+  {
+    "id": 1030,
+    "productoId": 1,
+    "cantidad": 1,
+    "fecha": "2026-07-31",
+    "estado": "Completado"
+  }
+]
